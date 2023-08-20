@@ -1,13 +1,10 @@
 
-const itemPrice = document.getElementById('item-price').innerText;
-const displayContainer = document.getElementById('display-container');
-const itemName = document.getElementById('item-name').innerText;
-const displayTotalPrice = document.getElementById('display-total-price').innerText;
-let updateTotalPrice=parseFloat(itemPrice);
 document.getElementById('single-card').addEventListener('click' , function(){
-    updateTotalPrice += parseFloat(displayTotalPrice)
     
+    const itemPrice = document.getElementById('item-price').innerText;
+    const displayContainer = document.getElementById('display-container');
     const countNumber = displayContainer.childElementCount;
+    const itemName = document.getElementById('item-name').innerText;
 
     const p = document.createElement('p');
     p.innerText = `${countNumber + 1}. ${itemName}`;
@@ -15,9 +12,11 @@ document.getElementById('single-card').addEventListener('click' , function(){
 
     displayContainer.appendChild(p);
 
-    displayTotalPrice.innerText = updateTotalPrice;
-    console.log(updateTotalPrice);
+
+    // ================
+
+    const displayTotalPrice = document.getElementById('display-total-price');
+    const updateTotalPrice = parseFloat(displayTotalPrice.innerText) + parseFloat(itemPrice);
+    displayTotalPrice.innerText = updateTotalPrice.toFixed(2);
 
 });
-
-
