@@ -1,6 +1,6 @@
 
-document.getElementById('single-card').addEventListener('click' , function(){
-    
+
+function addToCard(){
     const itemPrice = document.getElementById('item-price').innerText;
     const displayContainer = document.getElementById('display-container');
     const countNumber = displayContainer.childElementCount;
@@ -19,4 +19,21 @@ document.getElementById('single-card').addEventListener('click' , function(){
     const updateTotalPrice = parseFloat(displayTotalPrice.innerText) + parseFloat(itemPrice);
     displayTotalPrice.innerText = updateTotalPrice.toFixed(2);
 
-});
+    
+
+    // purchase button 
+    if(displayTotalPrice.innerText > 0){
+        const purchaseButton = document.getElementById('purchase-button');
+        purchaseButton.classList.remove('pointer-events-none' , 'opacity-[50%]');
+    }
+
+    // apply button
+    if(displayTotalPrice.innerText >= 200){
+        const applyButton = document.getElementById('apply-button');
+        applyButton.classList.remove('pointer-events-none' , 'opacity-[50%]');
+    }
+
+}
+
+
+

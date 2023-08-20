@@ -77,7 +77,7 @@
                     <!-- card container -->
                     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
                         <!-- single card -->
-                        <div id="single-card" class="bg-white p-4 rounded-md cursor-pointer">
+                        <div id="single-card" onclick="addToCard()" class="bg-white p-4 rounded-md cursor-pointer">
                             <div class="bg-[#1111110D] h-36 flex justify-center items-center rounded-md">
                                 <img class="scale-75" src="./images/prod1.png" alt="">
                             </div>
@@ -97,9 +97,9 @@
                         </div>
 
                         <!-- single card -->
-                        <div class="bg-white p-4 rounded-md">
+                        <div id="single-card" onclick="addToCard()" class="bg-white p-4 rounded-md cursor-pointer">
                             <div class="bg-[#1111110D] h-36 flex justify-center items-center rounded-md">
-                                <img class="scale-75" src="./images/prod2.png" alt="">
+                                <img class="scale-75" src="./images/prod1.png" alt="">
                             </div>
                             <div class="text-center pt-5">
                                 <div>
@@ -111,8 +111,8 @@
                                         <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
                                     </div>
                                 </div>
-                                <h2 class="text-[#111] font-semibold text-lg">K. Accessories</h2>
-                                <p>39.00 TK</p>
+                                <h2 id="item-name" class="text-[#111] font-semibold text-lg">K. Accessories</h2>
+                                <p><span id="item-price">39.00</span> TK</p>
                             </div>
                         </div>
 
@@ -299,8 +299,8 @@
                     <h2 class="text-[#111] font-semibold text-lg mb-3">Have coupon?</h2>
                     <!-- input with button -->
                     <div class="flex">
-                        <input type="text" placeholder="Coupon Code"
-                            class="p-2 border border-r-0 rounded-l-lg w-8/12 pl-3"><button
+                        <input type="text" placeholder="Coupon Code" id="coupon-input"
+                            class="p-2 border border-r-0 rounded-l-lg w-8/12 pl-3"><button id="apply-button"  
                             class="bg-[#E527B2] p-2 rounded-r text-white font-medium w-4/12 pointer-events-none opacity-[50%]">Apply</button>
                     </div>
 
@@ -309,8 +309,8 @@
 
                 <!-- purchase card -->
 
-                <div> 
-                     
+                <div>
+
                     <!-- ======================================== -->
 
                     <!-- display -->
@@ -320,13 +320,21 @@
                         <hr class="my-3">
                         <div>
                             <div class="flex">
-                                <h2 class="text-[#11111180] font-semibold"><p class="text-[#111] text-lg font-semibold inline">Total price:</p> <span id="display-total-price">00.00</span>  TK</h2>
+                                <h2 class="text-[#11111180] font-semibold">
+                                    <p class="text-[#111] text-lg font-semibold inline">Total price:</p> <span
+                                        id="display-total-price">00.00</span> TK
+                                </h2>
                             </div>
                             <div class="flex">
-                                <h2 class="text-[#11111180] font-semibold"><p class="text-[#111] text-lg font-semibold inline">Discount:</p> <span>00.40</span>  TK</h2>
+                                <h2 class="text-[#11111180] font-semibold">
+                                    <p class="text-[#111] text-lg font-semibold inline">Discount:</p> <span id="discount-element">00.00</span>
+                                    TK
+                                </h2>
                             </div>
                             <div class="flex">
-                                <h2 class="text-[#11111180] font-semibold"><p class="text-[#111] text-lg font-semibold inline">Total:</p> <span>00.00</span>  TK</h2>
+                                <h2 class="text-[#11111180] font-semibold">
+                                    <p class="text-[#111] text-lg font-semibold inline">Total:</p> <span>00.00</span> TK
+                                </h2>
                             </div>
                         </div>
                         <hr class="my-3">
@@ -335,7 +343,9 @@
 
                     <!-- button -->
                     <div>
-                        <button class="bg-[#E527B2] p-2 rounded text-white font-medium w-[85%] block mx-auto relative mt-[-19px] pointer-events-none opacity-[50%]">Make Purchase</button>
+                        <button id="purchase-button"
+                            class="bg-[#E527B2] p-2 rounded text-white font-medium w-[85%] block mx-auto relative mt-[-19px] pointer-events-none opacity-[50%]">Make
+                            Purchase</button>
                     </div>
 
                 </div>
