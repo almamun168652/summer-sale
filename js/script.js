@@ -1,10 +1,11 @@
 
 
-function addToCard() {
-    const itemPrice = document.getElementById('item-price').innerText;
+function addToCard(data) {
+
+    const itemPrice = data.childNodes[3].childNodes[5].childNodes[0].innerText;
     const displayContainer = document.getElementById('display-container');
     const countNumber = displayContainer.childElementCount;
-    const itemName = document.getElementById('item-name').innerText;
+    const itemName = data.childNodes[3].childNodes[3].innerText;
 
     const p = document.createElement('p');
     p.innerText = `${countNumber + 1}. ${itemName}`;
@@ -56,6 +57,9 @@ document.getElementById('apply-button').addEventListener('click', function () {
         lessTotalDisplay.innerText = lessTotalAmount.toFixed(2);
 
     }
+
+    couponInput.value = '';
+    
 
 });
 
